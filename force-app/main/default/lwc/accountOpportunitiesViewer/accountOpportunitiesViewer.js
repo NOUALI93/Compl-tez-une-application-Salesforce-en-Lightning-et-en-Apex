@@ -4,7 +4,8 @@ import getOpportunities from '@salesforce/apex/AccountOpportunitiesController.ge
 export default class AccountOpportunitiesViewer extends LightningElement {
     @api recordId;
     @track opportunities;
-    @track error = {};
+    @track error;
+    @track nodata;
     columns = [
         { label: 'Nom Opportunité', fieldName: 'Name', type: 'text' },
         { label: 'Montant', fieldName: 'Amount', type: 'currency' },
@@ -12,9 +13,11 @@ export default class AccountOpportunitiesViewer extends LightningElement {
         { label: 'Phase', fieldName: 'StageName', type: 'text' }
     ];
 
-    @wire(getOpportunities, { recordId: '$accountId' }) //error
+    @wire(getOpportunities, { accountId: '$recordId' }) //error
     wiredOpportunities({ error, data }) {
-        if (data) {
+        if (data=[]) {
+            this.nodata = data;
+        } else if (data){
             this.opportunities = data;
         } else if (error) {
             this.error = error;
