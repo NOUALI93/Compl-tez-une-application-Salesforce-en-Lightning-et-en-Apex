@@ -1,0 +1,28 @@
+=== Test Results
+TEST NAME                                                OUTCOME  MESSAGE  RUNTIME (MS)
+───────────────────────────────────────────────────────  ───────  ───────  ────────────
+OpportunitySelectorTest.testGetOpportunitiesByAccountId  Pass              78          
+AccountOpportunitiesControllerTest.testGetOpportunities  Pass              38          
+
+
+=== Test Setup Time by Test Class for Run 707gK00000GrKYy
+TEST SETUP METHOD NAME                    SETUP TIME
+────────────────────────────────────────  ──────────
+OpportunitySelectorTest.setup             624       
+AccountOpportunitiesControllerTest.setup  169       
+
+
+=== Test Summary
+NAME                 VALUE                         
+───────────────────  ──────────────────────────────
+Outcome              Passed                        
+Tests Ran            4                             
+Pass Rate            100%                          
+Fail Rate            0%                            
+Skip Rate            0%                            
+Test Run Id          707gK00000GrKYy               
+Test Setup Time      793 ms                        
+Test Execution Time  116 ms                        
+Test Total Time      909 ms                        
+Org Id               00DgK00000BdaZzUAJ            
+Username             bader.nouali281@agentforce.com

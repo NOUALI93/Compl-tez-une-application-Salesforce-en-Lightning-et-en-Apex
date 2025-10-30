@@ -17,4 +17,17 @@ public class TestDataFactory {
         insert opp;
         return opp;
     }
+
+     public static Case createTestCase(Id accountId) {
+        Case newCase = new Case(
+                Subject = 'Customer cannot log in',
+                Description = 'Customer reports that they cannot log into the portal.',
+                Status = 'New',
+                Origin = 'Web',
+                AccountId = accountId
+        );
+
+        insert newCase;
+        return newCase;
+    }
 }

@@ -11,6 +11,7 @@ export default class AccountCaseSearchComponent extends LightningElement {
     @api recordId;
     @track cases;
     @track error;
+    @track nocase;
     searchTerm = '';
     columns = COLUMNS;
 
@@ -21,8 +22,16 @@ export default class AccountCaseSearchComponent extends LightningElement {
     handleSearch() {
         findCasesBySubject({ accountId: this.recordId, subjectSearchTerm: this.searchTerm })
             .then(result => {
-                this.cases = result;
-                this.error = undefined;
+                if(result?.length){
+                    this.cases = result;
+                    this.error = undefined;
+                    this.nocase = false;
+                }else{
+                    this.cases = null;
+                    this.error = undefined;
+                    this.nocase = true;
+                }
+                
             })
             .catch(error => {
                 this.error = 'Une erreur est survenue lors de la recherche des cases.';
