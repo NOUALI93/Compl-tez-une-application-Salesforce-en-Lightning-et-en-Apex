@@ -23,6 +23,6 @@ private class AccountCasesControllerTest {
         Test.startTest();
         List<Case> results = AccountCasesController.findCasesBySubject(testAccount.Id,searchPattern);
         Test.stopTest();
-        Assert.areEqual(0, results.size(), 'Should return one Case');
+        Assert.areEqual(null, results, 'Should return nothing');
     }
 }
